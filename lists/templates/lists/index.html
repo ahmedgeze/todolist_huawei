@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+
+
+
+
+  <h2 class="title">Create simple Todolists.</h2>
+  <!-- {% for e in todolists %} -->
+
+  <!-- {% endfor %} -->
+
+  <div class="row">
+    <div class></div>
+    <div class>
+      <form action="{% url 'lists:new_todolist' %}" method=post>
+        {% csrf_token %}
+
+           {% bootstrap_form form %}
+          <input type="submit" class="button button-primary" value="Start one now">
+        </dl>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+
+{% endblock %}

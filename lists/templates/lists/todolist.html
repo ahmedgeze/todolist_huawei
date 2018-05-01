@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block js %}
+<script src="{% static 'lists/js/lists.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="row">
+    <div ></div>
+    <div >
+      <div class="title">{{todolist.title}}</div>
+      <form action="{% url 'lists:add_todo' todolist.id %}" method=post>
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="row">
+      <div class=>
+        <h6 class>{{ todolist.count_open }} open</h6>
+        <ul>
+          {% for todo in todolist.todos.all %}
+            {% if not todo.is_finished %}
+              <li><input type="checkbox" id="checkbox" data-todo-id="{{ todo.id }}"> {{ todo.description }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class>
+        <h6 class>{{ todolist.count_finished }} finished</h6>
+        <ul>
+          {% for todo in todolist.todos.all %}
+            {% if todo.is_finished %}
+            <li><input type="checkbox" id="checkbox" data-todo-id="{{ todo.id }}" checked="checked"> {{ todo.description }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

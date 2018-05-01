@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+<h1>LOGİN</h1>
+
+<div class="container">
+
+
+  <form  method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
+    <a href="{% url "social:begin" "github" %}" class="btb btn-primary btn-lg btn-block" value="OR LOG WİTH FACEBOOK" >
+  LOGİN WİTH GİT
+    </a>
+
+
+<br>
+
+
+ <a href="{% url "social:begin" "twitter" %}" class="btb btn-primary btn-lg btn-block" value="OR LOG WİTH FACEBOOK" >
+LOGİN WİTH TWİTTER
+ </a>
+
+
+
+
+
+  </form>
+
+</div>
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+<!-- <div class="row kpx_row-sm-offset-3 kpx_socialButtons">
+        <div class="col-xs-2 col-sm-2">
+            <a href="{% url "social:begin" "github" %}" class="btn btn-lg btn-block kpx_btn-github"
+               data-toggle="tooltip" data-placement="top"
+               title="GitHub">
+                <i class="fa fa-github fa-2x"></i>
+                <span class="hidden-xs"></span>
+            </a>
+        </div>
+
+        <div class="col-xs-2 col-sm-2">
+         <a href="{% url "social:begin" "twitter" %}" class="btn btn-lg btn-block kpx_btn-twitter"
+            data-toggle="tooltip" data-placement="top"
+            title="Twitter">
+             <i class="fa fa-twitter fa-2x"></i>
+             <span class="hidden-xs"></span>
+         </a>
+       </div>
+
+     </div> -->

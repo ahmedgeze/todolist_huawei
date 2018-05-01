@@ -1,0 +1,36 @@
+
+table.tablesorter {
+  background-color: #CDCDCD;
+  margin: 10px 0pt 15px;
+  width: 100%;
+  text-align: left;
+}
+
+table.tablesorter thead tr th,
+table.tablesorter tbody tr td,
+table.tablesorter tfoot tr th {
+  padding: 10px;
+  text-align: center;
+}
+
+table.tablesorter th:first-child,
+table.tablesorter tbody tr td:first-child {
+  text-align: left;
+}
+
+table.tablesorter thead tr th,
+table.tablesorter tfoot tr th {
+  border: 1px solid #FFF;
+}
+
+table.tablesorter th:last-child {
+  border-right: 0px solid #FFF;
+}
+
+
+table.tablesorter tbody td {
+  color: #3D3D3D;
+  padding: 4px;
+  background-color: #FFF;
+  vertical-align: top;
+}
