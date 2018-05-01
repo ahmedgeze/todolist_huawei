@@ -10,4 +10,5 @@ intall requirements->pip3 install -r requirements.txt
 
 then go to your local host :D
 
+AHMET SERDAR GEZE
 
